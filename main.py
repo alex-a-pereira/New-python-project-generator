@@ -109,31 +109,31 @@ def checkCredentials():
 
 def createProject():
 
-        global project_name
-        global project_folder
+    global project_name
+    global project_folder
 
-        os.chdir(project_dir)  # change the working directory to the directory containing your project folders
+    os.chdir(project_dir)  # change the working directory to the directory containing your project folders
 
-        while True:  # loop until I create the project folder
-            try:
-                project_name = input("Specify project name: ")
-                os.mkdir(project_name)
-            except FileExistsError:
-                print("Project already exists in " + project_dir + ". Try another project name: ")
-                continue
-            break
-        # assign the variable project_folder to the new path and create a venv w/ cmd line
-        project_folder = ntpath.join(project_dir, project_name)
-        os.system(project_folder[:2] + " & cd " + project_folder + " & pipenv --python 3.6")
+    while True:  # loop until I create the project folder
+        try:
+            project_name = input("Specify project name: ")
+            os.mkdir(project_name)
+        except FileExistsError:
+            print("Project already exists in " + project_dir + ". Try another project name: ")
+            continue
+        break
+    # assign the variable project_folder to the new path and create a venv w/ cmd line
+    project_folder = ntpath.join(project_dir, project_name)
+    os.system(project_folder[:2] + " & cd " + project_folder + " & pipenv --python 3.6")
 
-        # specify the project's virtual environment
-        os.chdir(venv_dir)
-        all_venvs = [d for d in os.listdir('.') if os.path.isdir(d)]
-        project_venv = max(all_venvs, key=os.path.getmtime)
-        venv_path = venv_dir + project_venv
-        print("Project created.")
+    # specify the project's virtual environment
+    os.chdir(venv_dir)
+    all_venvs = [d for d in os.listdir('.') if os.path.isdir(d)]
+    project_venv = max(all_venvs, key=os.path.getmtime)
+    venv_path = venv_dir + project_venv
+    print("Project created.")
 
-        os.chdir(project_folder)  # change working directory to the project folder
+    os.chdir(project_folder)  # change working directory to the project folder
 
 
 def installPackages():
@@ -181,8 +181,8 @@ def main():
     else:
         print("Oops... Something went wrong. Please re-run the script.")
 
-    print("Congratulations, your project is created!")
-    print("Project path: " + project_folder + "\nVirtual environment path: " + "venv_path")
+    print("\nCongratulations, your project is created!\n")
+    print("Project path: " + project_folder + "\nVirtual environment path: " + venv_path)
 
 
 main()
