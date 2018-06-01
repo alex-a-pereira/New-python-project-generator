@@ -44,6 +44,7 @@ def assemblePath(message):
         break
     return path
 
+
 def writeCredentials():
 
     global file_name
@@ -130,7 +131,7 @@ def createProject():
         all_venvs = [d for d in os.listdir('.') if os.path.isdir(d)]
         project_venv = max(all_venvs, key=os.path.getmtime)
         venv_path = venv_dir + project_venv
-        print("Project created.)
+        print("Project created.")
 
         os.chdir(project_folder)  # change working directory to the project folder
 
@@ -169,7 +170,6 @@ def main():
     else:
         print("Oops... Something went wrong. Please re-run the script.")
 
-
     # install packages??
     print("\nPackages can be installed at any time by running pipenv in the directory " + project_folder + ".\n")
     yesOrNo = askUser("Install any packages right now? Y or N: ")
@@ -181,8 +181,8 @@ def main():
     else:
         print("Oops... Something went wrong. Please re-run the script.")
 
-    print("Congratulations, your project is created!"
-    print("Project path: " + project_folder + "\nVirtual environment path: " + venv_path")
+    print("Congratulations, your project is created!")
+    print("Project path: " + project_folder + "\nVirtual environment path: " + "venv_path")
 
 
 main()
