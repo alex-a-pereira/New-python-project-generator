@@ -1,0 +1,15 @@
+# ignore everything besides the whitelisted files below
+/*
+
+# WHITELIST
+# python files, git, readme
+!*.py
+!*.gitignore
+!*.md
+
+# package manager
+!Pipfile
+!Pipfile.lock
+
+# misc other files typically used in projects
+!*.txt

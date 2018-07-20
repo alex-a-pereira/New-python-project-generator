@@ -1,0 +1,2 @@
+D:\~Users\alex\Coding\Python
+C:\Users\alex\.virtualenvs
