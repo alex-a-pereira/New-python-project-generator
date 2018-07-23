@@ -5,9 +5,6 @@
 # python files
 !*.py
 
-# assets folder
-!/assets
-
 # package manager and inactive files
 !Pipfile
 !Pipfile.lock

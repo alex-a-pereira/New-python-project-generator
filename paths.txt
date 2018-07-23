@@ -1,2 +1,2 @@
-D:\~Users\alex\Coding\Python
+C:\Users\alex\Documents
 C:\Users\alex\.virtualenvs
